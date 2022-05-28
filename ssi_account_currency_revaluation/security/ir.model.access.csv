@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_currency_revaluation_all,account.currency_revaluation - all user,model_account_currency_revaluation,,1,0,0,0
+access_currency_revaluation_viewer,account.currency_revaluation - viewer,model_account_currency_revaluation,currency_revaluation_viewer_group,1,0,0,0
+access_currency_revaluation_user,account.currency_revaluation - user,model_account_currency_revaluation,currency_revaluation_user_group,1,1,1,1
