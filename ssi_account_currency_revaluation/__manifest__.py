@@ -4,7 +4,7 @@
 
 {
     "name": "Currency Revaluation",
-    "version": "14.0.1.1.0",
+    "version": "14.0.1.2.0",
     "category": "Accounting",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
@@ -29,6 +29,7 @@
         "data/sequence_template_data.xml",
         "data/approval_template_data.xml",
         "data/policy_template_data.xml",
+        "data/account_journal_data.xml",
         "views/res_config_settings_views.xml",
         "views/account_currency_revaluation_views.xml",
     ],
