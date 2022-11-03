@@ -206,7 +206,7 @@ class AccountCurrencyRevaluation(models.Model):
                     record.company_id,
                     record.date,
                 )
-                amount_diff = amount_in_company_currency - amount_revaluation
+                amount_diff = amount_revaluation - amount_in_company_currency
 
             record.amount_in_company_currency = amount_in_company_currency
             record.amount_in_account_currency = amount_in_account_currency
