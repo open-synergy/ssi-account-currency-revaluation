@@ -416,8 +416,9 @@ class AccountCurrencyRevaluation(models.Model):
     def _create_accounting_entry(self):
         self.ensure_one()
         Move = self.env["account.move"]
-        # raise UserError(str(self._prepare_account_move()))
-        return Move.create(self._prepare_account_move())
+        move = Move.create(self._prepare_account_move())
+        move.action_post()
+        return move
 
     def _prepare_done_data(self):
         _super = super(AccountCurrencyRevaluation, self)
@@ -440,4 +441,6 @@ class AccountCurrencyRevaluation(models.Model):
                         "move_id": False,
                     }
                 )
+                if move.state == "posted":
+                    move.button_cancel()
                 move.with_context(force_delete=True).unlink()
