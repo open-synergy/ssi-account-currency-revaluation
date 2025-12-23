@@ -18,7 +18,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[ssi_account_currency_revaluation](ssi_account_currency_revaluation/) | 14.0.1.5.0 |  | Currency Revaluation
+[ssi_account_currency_revaluation](ssi_account_currency_revaluation/) | 14.0.1.6.0 |  | Currency Revaluation
 
 [//]: # (end addons)
 
