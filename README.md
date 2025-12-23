@@ -14,7 +14,11 @@ None
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[ssi_account_currency_revaluation](ssi_account_currency_revaluation/) | 14.0.1.5.0 |  | Currency Revaluation
 
 [//]: # (end addons)
 
