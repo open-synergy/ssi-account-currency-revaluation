@@ -45,8 +45,8 @@
                 <field name="company_currency_id" />
             </xpath>
             <xpath expr="//group[@name='header_right']" position="inside">
-                <field name="account_id" />
-                <field name="currency_id" />
+                <field name="account_id" domain="[('currency_id','!=',False)]" />
+                <field name="currency_id" readonly="1" force_save="1" />
                 <field name="gain_account_id" />
                 <field name="loss_account_id" />
                 <field name="journal_id" />

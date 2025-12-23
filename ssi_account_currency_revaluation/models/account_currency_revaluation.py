@@ -190,9 +190,11 @@ class AccountCurrencyRevaluation(models.Model):
                     criteria,
                     fields=["account_id", "balance", "amount_currency"],
                     groupby=["account_id"],
-                )[0]
-                amount_in_company_currency = compute_result["balance"]
-                amount_in_account_currency = compute_result["amount_currency"]
+                )
+                if len(compute_result) > 0:
+                    compute_result = compute_result[0]
+                    amount_in_company_currency = compute_result["balance"]
+                    amount_in_account_currency = compute_result["amount_currency"]
 
                 rate_at_revaluation = Currency._get_conversion_rate(
                     record.currency_id,
