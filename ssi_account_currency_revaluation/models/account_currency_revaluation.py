@@ -1,6 +1,6 @@
 # Copyright 2022 OpenSynergy Indonesia
 # Copyright 2022 PT. Simetri Sinergi Indonesia
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
 from odoo import api, fields, models
@@ -170,14 +170,15 @@ class AccountCurrencyRevaluation(models.Model):
         MoveLine = self.env["account.move.line"]
         Currency = self.env["res.currency"]
         for record in self:
-            amount_in_company_currency = (
-                amount_in_account_currency
-            ) = rate_at_revaluation = amount_revaluation = amount_diff = 0.0
+            amount_in_company_currency = amount_in_account_currency = (
+                rate_at_revaluation
+            ) = amount_revaluation = amount_diff = 0.0
             rate_quotation = "indirect"
 
             criteria = [
                 ("account_id", "=", record.account_id.id),
                 ("date", "<=", record.date),
+                ("move_id.state", "=", "posted"),
             ]
             if (
                 record.account_id
@@ -187,9 +188,8 @@ class AccountCurrencyRevaluation(models.Model):
             ):
                 compute_result = MoveLine.read_group(
                     criteria,
-                    fields=["balance", "amount_currency"],
+                    fields=["account_id", "balance", "amount_currency"],
                     groupby=["account_id"],
-                    lazy=False,
                 )[0]
                 amount_in_company_currency = compute_result["balance"]
                 amount_in_account_currency = compute_result["amount_currency"]
@@ -274,7 +274,7 @@ class AccountCurrencyRevaluation(models.Model):
 
     @api.model
     def _get_policy_field(self):
-        res = super(AccountCurrencyRevaluation, self)._get_policy_field()
+        res = super()._get_policy_field()
         policy_field = [
             "confirm_ok",
             "approve_ok",
@@ -421,7 +421,7 @@ class AccountCurrencyRevaluation(models.Model):
         return move
 
     def _prepare_done_data(self):
-        _super = super(AccountCurrencyRevaluation, self)
+        _super = super()
         result = _super._prepare_done_data()
         result.update(
             {
@@ -431,7 +431,7 @@ class AccountCurrencyRevaluation(models.Model):
         return result
 
     def action_cancel(self, cancel_reason_id=False):
-        _super = super(AccountCurrencyRevaluation, self)
+        _super = super()
         _super.action_cancel(cancel_reason_id)
         for record in self:
             if record.move_id:
