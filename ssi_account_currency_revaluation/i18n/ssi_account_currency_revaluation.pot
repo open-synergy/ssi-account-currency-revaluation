@@ -1,0 +1,733 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_account_currency_revaluation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_move_line__currency_revaluation_id
+msgid "# Currency Revaluation"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__name
+msgid "# Document"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__currency_id
+msgid "Account Currency"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__account_id
+msgid "Account to Revaluate"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__move_id
+msgid "Accounting Entry"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__active_approval_ids
+msgid "Active Approvals"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__active_approver_partner_ids
+msgid "Active Partners"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__active_approver_user_ids
+msgid "Active Users"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:res.groups,name:ssi_account_currency_revaluation.currency_revaluation_all_group
+msgid "All"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__allowed_policy_template_ids
+msgid "Allowed Policy Templates"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__amount_revaluation
+msgid "Amount Revaluation"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__amount_in_account_currency
+msgid "Amount in Account Currency"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__amount_in_company_currency
+msgid "Amount in Company Currency"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__analytic_account_id
+msgid "Analytic Account"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__approval_template_id
+msgid "Approval Configuration"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__approval_template_id
+msgid "Approval Template"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__approval_ids
+msgid "Approvals"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__approve_ok
+msgid ""
+"Approve policy\n"
+"\n"
+"* If active user can see and execute 'Approve' button"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__approved
+msgid "Approved"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__approve_ok
+msgid "Can Approve"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__cancel_ok
+msgid "Can Cancel"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__confirm_ok
+msgid "Can Confirm"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__done_ok
+msgid "Can Finished"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__manual_number_ok
+msgid "Can Input Manual Document Number"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__reject_ok
+msgid "Can Reject"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__restart_ok
+msgid "Can Restart"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__restart_approval_ok
+msgid "Can Restart Approval"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__cancel_reason_id
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__cancel_ok
+msgid ""
+"Cancel policy\n"
+"\n"
+"* If active user can see and execute 'Cancel' button"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields.selection,name:ssi_account_currency_revaluation.selection__account_currency_revaluation__state__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model,name:ssi_account_currency_revaluation.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__company_id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__company_id
+#: model:res.groups,name:ssi_account_currency_revaluation.currency_revaluation_company_group
+msgid "Company"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__company_currency_id
+msgid "Company Currency"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__company_partner_id
+msgid "Company Partner"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:res.groups,name:ssi_account_currency_revaluation.currency_revaluation_company_child_group
+msgid "Company and All Child Companies"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__company_id
+msgid ""
+"Company that own the document\n"
+"\n"
+"* Automatically filled with user's company.\n"
+"  Default company can be changed"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model,name:ssi_account_currency_revaluation.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__confirm_ok
+msgid ""
+"Confirm policy\n"
+"\n"
+"* If active user can see and execute 'Confirm' button"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model,name:ssi_account_currency_revaluation.model_account_currency_revaluation
+#: model:ir.module.category,name:ssi_account_currency_revaluation.currency_revaluation_data_ownership_module_category
+#: model:ir.module.category,name:ssi_account_currency_revaluation.currency_revaluation_module_category
+msgid "Currency Revaluation"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__module_ssi_account_currency_revaluation_custom_information
+msgid "Currency Revaluation - Custom Information"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__module_ssi_account_currency_revaluation_qrcode
+msgid "Currency Revaluation - QR Code"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__module_ssi_account_currency_revaluation_related_attachment
+msgid "Currency Revaluation - Related Attachment"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__module_ssi_account_currency_revaluation_state_change_constrains
+msgid "Currency Revaluation - State Change Constrains"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__module_ssi_account_currency_revaluation_status_check
+msgid "Currency Revaluation - Status Check"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Currency Revaluation Configuration"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.actions.act_window,name:ssi_account_currency_revaluation.account_currency_revaluation_action
+#: model:ir.ui.menu,name:ssi_account_currency_revaluation.account_currency_revaluation_menu
+msgid "Currency Revaluations"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Custom Information"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__date
+msgid "Date"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields.selection,name:ssi_account_currency_revaluation.selection__account_currency_revaluation__rate_quotation__direct
+msgid "Direct"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__display_name
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_company__display_name
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields.selection,name:ssi_account_currency_revaluation.selection__account_currency_revaluation__state__done
+msgid "Done"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__done_ok
+msgid ""
+"Done policy\n"
+"\n"
+"* If active user can see and execute 'Done' button"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields.selection,name:ssi_account_currency_revaluation.selection__account_currency_revaluation__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_move_line__id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_company__id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__message_needaction
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields.selection,name:ssi_account_currency_revaluation.selection__account_currency_revaluation__rate_quotation__indirect
+msgid "Indirect"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__journal_id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_company__unrealized_journal_id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__unrealized_journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model,name:ssi_account_currency_revaluation.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation____last_update
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_company____last_update
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__manual_number_ok
+msgid ""
+"Manual number assignment policy\n"
+"\n"
+"* If active user can edit document number"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__next_approval_ids
+msgid "Next Approvals"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__note
+msgid "Note"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Optional Feature for Currency Revaluation"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__policy_template_id
+msgid "Policy Template"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "QR Code"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__rate_quotation
+msgid "Rate Quotation"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__reject_ok
+msgid ""
+"Reject policy\n"
+"\n"
+"* If active user can see and execute 'Reject' button"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Related Attachment"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__restart_approval_ok
+msgid ""
+"Restart approval policy\n"
+"\n"
+"* If active user can see and execute 'Restart Approval' button"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__restart_ok
+msgid ""
+"Restart policy\n"
+"\n"
+"* If active user can see and execute 'Restart' button"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__rate_at_revaluation
+msgid "Revaluation Rate"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__reviewer_id
+msgid "Reviewer"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__state
+msgid "State"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "State Change Constrains"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Status Check"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__name
+msgid ""
+"Transaction/document number\n"
+"\n"
+"* Unique indentifer of transaction\n"
+"* Leave '/' to automatically generate number\n"
+"* Change '/' into any number/identifier to manually assign number.\n"
+"  Manual number assignment can be done in 'Draft' state\n"
+"  Only user with 'Can Manualy Assign Number' policy can manually assign number.\n"
+"* Transaction with number other than '/' can not be deleted."
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__gain_account_id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_company__unrealized_gain_account_id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__unrealized_gain_account_id
+msgid "Unrealized Gain Account"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__amount_diff
+msgid "Unrealized Gain/Loss"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__loss_account_id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_company__unrealized_loss_account_id
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_res_config_settings__unrealized_loss_account_id
+msgid "Unrealized Loss Account"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Use QR Code"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Use custom information"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Use related attachment"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model_terms:ir.ui.view,arch_db:ssi_account_currency_revaluation.res_config_settings_view_form
+msgid "Use status check"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:res.groups,name:ssi_account_currency_revaluation.currency_revaluation_user_group
+msgid "User"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__user_id
+msgid ""
+"User that responsible for document\n"
+"\n"
+"* Create user can be different with responsible user\n"
+"* Automatically filled with user that initiate document creation.\n"
+"  Default responsible can be changed."
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__reviewer_id
+msgid ""
+"User that responsible to review document\n"
+"\n"
+"* Unless it configured to approve reviewer does not equal to approver"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__active_approver_user_ids
+msgid "Users that can approve/reject document"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:res.groups,name:ssi_account_currency_revaluation.currency_revaluation_validator_group
+msgid "Validator"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:res.groups,name:ssi_account_currency_revaluation.currency_revaluation_viewer_group
+msgid "Viewer"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields.selection,name:ssi_account_currency_revaluation.selection__account_currency_revaluation__state__confirm
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,field_description:ssi_account_currency_revaluation.field_account_currency_revaluation__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: ssi_account_currency_revaluation
+#: model:ir.model.fields,help:ssi_account_currency_revaluation.field_account_currency_revaluation__website_message_ids
+msgid "Website communication history"
+msgstr ""
