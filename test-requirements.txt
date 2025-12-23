@@ -1,0 +1,9 @@
+odoo14-addon-configuration-helper
+odoo14-addon-currency-rate-inverted
+odoo14-addon-ssi-duration-mixin
+odoo14-addon-ssi-financial-accounting
+odoo14-addon-ssi-master-data-mixin
+odoo14-addon-ssi-transaction-cancel-mixin
+odoo14-addon-ssi-transaction-confirm-mixin
+odoo14-addon-ssi-transaction-done-mixin
+odoo14-addon-ssi-transaction-open-mixin
