@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-ssi_account_currency_revaluation',
+        'odoo14-addon-ssi_account_currency_revaluation_operating_unit',
     ],
     classifiers=[
         'Programming Language :: Python',
