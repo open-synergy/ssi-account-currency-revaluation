@@ -170,9 +170,9 @@ class AccountCurrencyRevaluation(models.Model):
         MoveLine = self.env["account.move.line"]
         Currency = self.env["res.currency"]
         for record in self:
-            amount_in_company_currency = amount_in_account_currency = (
-                rate_at_revaluation
-            ) = amount_revaluation = amount_diff = 0.0
+            amount_in_company_currency = (
+                amount_in_account_currency
+            ) = rate_at_revaluation = amount_revaluation = amount_diff = 0.0
             rate_quotation = "indirect"
 
             criteria = [
