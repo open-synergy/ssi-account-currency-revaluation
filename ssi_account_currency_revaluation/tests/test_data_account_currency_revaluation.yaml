@@ -1,0 +1,396 @@
+scenarios:
+  - name: "Currency Revaluation - Full Workflow: draft to done (gain case)"
+    steps:
+      - step: "Get EUR currency"
+        action: "search"
+        model: "res.currency"
+        domain:
+          - ["name", "=", "EUR"]
+        save_as: "currency_eur"
+        limit: 1
+
+      - step: "Activate EUR currency"
+        action: "write"
+        target: "currency_eur"
+        values:
+          active: true
+
+      - step: "Create EUR currency rate"
+        action: "create"
+        model: "res.currency.rate"
+        save_as: "eur_rate"
+        values:
+          name: "2024-02-28"
+          rate: 0.8
+          currency_id: "EVAL: registry['currency_eur'].id"
+
+      - step: "Get account type for current assets"
+        action: "ref"
+        xml_id: "account.data_account_type_current_assets"
+        save_as: "acct_type_asset"
+
+      - step: "Get account type for other income"
+        action: "ref"
+        xml_id: "account.data_account_type_other_income"
+        save_as: "acct_type_income"
+
+      - step: "Get account type for expenses"
+        action: "ref"
+        xml_id: "account.data_account_type_expenses"
+        save_as: "acct_type_expense"
+
+      - step: "Create revaluation account with EUR currency"
+        action: "create"
+        model: "account.account"
+        save_as: "reval_account"
+        values:
+          name: "Test Foreign Currency Account S1"
+          code: "TSACR001"
+          user_type_id: "EVAL: registry['acct_type_asset'].id"
+          currency_id: "EVAL: registry['currency_eur'].id"
+
+      - step: "Create gain account"
+        action: "create"
+        model: "account.account"
+        save_as: "gain_account"
+        values:
+          name: "Test Forex Gain S1"
+          code: "TSACR002"
+          user_type_id: "EVAL: registry['acct_type_income'].id"
+
+      - step: "Create loss account"
+        action: "create"
+        model: "account.account"
+        save_as: "loss_account"
+        values:
+          name: "Test Forex Loss S1"
+          code: "TSACR003"
+          user_type_id: "EVAL: registry['acct_type_expense'].id"
+
+      - step: "Create balance account for source move"
+        action: "create"
+        model: "account.account"
+        save_as: "balance_account"
+        values:
+          name: "Test Balance Account S1"
+          code: "TSACR004"
+          user_type_id: "EVAL: registry['acct_type_expense'].id"
+
+      - step: "Create revaluation journal"
+        action: "create"
+        model: "account.journal"
+        save_as: "reval_journal"
+        values:
+          name: "Test Currency Revaluation S1"
+          code: "TFRX1"
+          type: "general"
+
+      - step: "Get company"
+        action: "search"
+        model: "res.company"
+        domain:
+          - ["id", "=", 1]
+        save_as: "company"
+        limit: 1
+
+      - step: "Set company unrealized accounts"
+        action: "write"
+        target: "company"
+        values:
+          unrealized_gain_account_id: "EVAL: registry['gain_account'].id"
+          unrealized_loss_account_id: "EVAL: registry['loss_account'].id"
+          unrealized_journal_id: "EVAL: registry['reval_journal'].id"
+
+      - step: "Create and post source journal entry with EUR amounts"
+        action: "create"
+        model: "account.move"
+        save_as: "source_move"
+        values:
+          journal_id: "EVAL: registry['reval_journal'].id"
+          date: "2024-01-31"
+          line_ids:
+            - [
+                0,
+                0,
+                {
+                  name: "Foreign currency debit",
+                  account_id: "EVAL: registry['reval_account'].id",
+                  currency_id: "EVAL: registry['currency_eur'].id",
+                  amount_currency: 900.0,
+                  debit: 1000.0,
+                  credit: 0.0,
+                },
+              ]
+            - [
+                0,
+                0,
+                {
+                  name: "Balancing credit",
+                  account_id: "EVAL: registry['balance_account'].id",
+                  debit: 0.0,
+                  credit: 1000.0,
+                },
+              ]
+
+      - step: "Post source journal entry"
+        action: "call"
+        target: "source_move"
+        method: "action_post"
+
+      - step: "Create currency revaluation record"
+        action: "create"
+        model: "account.currency_revaluation"
+        save_as: "revaluation"
+        as_user: "base.user_admin"
+        values:
+          date: "2024-02-28"
+          account_id: "EVAL: registry['reval_account'].id"
+          currency_id: "EVAL: registry['currency_eur'].id"
+          gain_account_id: "EVAL: registry['gain_account'].id"
+          loss_account_id: "EVAL: registry['loss_account'].id"
+          journal_id: "EVAL: registry['reval_journal'].id"
+
+      - step: "Assert revaluation created in draft"
+        action: "assert"
+        target: "revaluation"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
+
+      - step: "Confirm revaluation"
+        action: "call"
+        target: "revaluation"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+        asserts:
+          state:
+            type: "value"
+            expected: "confirm"
+
+      - step: "Get validator group"
+        action: "ref"
+        xml_id: "ssi_account_currency_revaluation.currency_revaluation_validator_group"
+        save_as: "validator_group"
+
+      - step: "Get admin user"
+        action: "ref"
+        xml_id: "base.user_admin"
+        save_as: "admin_user"
+
+      - step: "Add admin user to validator group"
+        action: "write"
+        target: "validator_group"
+        values:
+          users:
+            - "EVAL: (4, registry['admin_user'].id, 0)"
+
+      - step: "Approve revaluation"
+        action: "call"
+        target: "revaluation"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after approval"
+        action: "call"
+        target: "revaluation"
+        method: "invalidate_cache"
+
+      - step: "Assert revaluation is done"
+        action: "assert"
+        target: "revaluation"
+        asserts:
+          state:
+            type: "value"
+            expected: "done"
+
+      - step: "Assert accounting entry was created"
+        action: "assert"
+        target: "revaluation"
+        asserts:
+          move_id:
+            type: "value"
+            operator: "is_truthy"
+
+  - name: "Currency Revaluation - Cancel after done"
+    steps:
+      - step: "Get EUR currency"
+        action: "search"
+        model: "res.currency"
+        domain:
+          - ["name", "=", "EUR"]
+        save_as: "currency_eur"
+        limit: 1
+
+      - step: "Get account type for current assets"
+        action: "ref"
+        xml_id: "account.data_account_type_current_assets"
+        save_as: "acct_type_asset"
+
+      - step: "Get account type for other income"
+        action: "ref"
+        xml_id: "account.data_account_type_other_income"
+        save_as: "acct_type_income"
+
+      - step: "Get account type for expenses"
+        action: "ref"
+        xml_id: "account.data_account_type_expenses"
+        save_as: "acct_type_expense"
+
+      - step: "Create revaluation account S2"
+        action: "create"
+        model: "account.account"
+        save_as: "reval_account"
+        values:
+          name: "Test Foreign Currency Account S2"
+          code: "TSACR011"
+          user_type_id: "EVAL: registry['acct_type_asset'].id"
+          currency_id: "EVAL: registry['currency_eur'].id"
+
+      - step: "Create gain account S2"
+        action: "create"
+        model: "account.account"
+        save_as: "gain_account"
+        values:
+          name: "Test Forex Gain S2"
+          code: "TSACR012"
+          user_type_id: "EVAL: registry['acct_type_income'].id"
+
+      - step: "Create loss account S2"
+        action: "create"
+        model: "account.account"
+        save_as: "loss_account"
+        values:
+          name: "Test Forex Loss S2"
+          code: "TSACR013"
+          user_type_id: "EVAL: registry['acct_type_expense'].id"
+
+      - step: "Create balance account S2"
+        action: "create"
+        model: "account.account"
+        save_as: "balance_account"
+        values:
+          name: "Test Balance Account S2"
+          code: "TSACR014"
+          user_type_id: "EVAL: registry['acct_type_expense'].id"
+
+      - step: "Create revaluation journal S2"
+        action: "create"
+        model: "account.journal"
+        save_as: "reval_journal"
+        values:
+          name: "Test Currency Revaluation S2"
+          code: "TFRX2"
+          type: "general"
+
+      - step: "Get company"
+        action: "search"
+        model: "res.company"
+        domain:
+          - ["id", "=", 1]
+        save_as: "company"
+        limit: 1
+
+      - step: "Set company unrealized accounts S2"
+        action: "write"
+        target: "company"
+        values:
+          unrealized_gain_account_id: "EVAL: registry['gain_account'].id"
+          unrealized_loss_account_id: "EVAL: registry['loss_account'].id"
+          unrealized_journal_id: "EVAL: registry['reval_journal'].id"
+
+      - step: "Create currency revaluation S2"
+        action: "create"
+        model: "account.currency_revaluation"
+        save_as: "revaluation"
+        as_user: "base.user_admin"
+        values:
+          date: "2024-02-28"
+          account_id: "EVAL: registry['reval_account'].id"
+          currency_id: "EVAL: registry['currency_eur'].id"
+          gain_account_id: "EVAL: registry['gain_account'].id"
+          loss_account_id: "EVAL: registry['loss_account'].id"
+          journal_id: "EVAL: registry['reval_journal'].id"
+
+      - step: "Confirm revaluation S2"
+        action: "call"
+        target: "revaluation"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+        asserts:
+          state:
+            type: "value"
+            expected: "confirm"
+
+      - step: "Get validator group S2"
+        action: "ref"
+        xml_id: "ssi_account_currency_revaluation.currency_revaluation_validator_group"
+        save_as: "validator_group"
+
+      - step: "Get admin user S2"
+        action: "ref"
+        xml_id: "base.user_admin"
+        save_as: "admin_user"
+
+      - step: "Ensure admin is in validator group S2"
+        action: "write"
+        target: "validator_group"
+        values:
+          users:
+            - "EVAL: (4, registry['admin_user'].id, 0)"
+
+      - step: "Approve revaluation S2"
+        action: "call"
+        target: "revaluation"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after approval S2"
+        action: "call"
+        target: "revaluation"
+        method: "invalidate_cache"
+
+      - step: "Assert revaluation S2 is done"
+        action: "assert"
+        target: "revaluation"
+        asserts:
+          state:
+            type: "value"
+            expected: "done"
+
+      - step: "Create cancel reason"
+        action: "create"
+        model: "base.cancel_reason"
+        save_as: "cancel_reason"
+        values:
+          name: "Test Cancel Reason"
+          code: "TCR001"
+
+      - step: "Cancel the revaluation"
+        action: "call"
+        target: "revaluation"
+        method: "action_cancel"
+        as_user: "base.user_admin"
+        context:
+          bypass_policy_check: true
+
+      - step: "Invalidate cache after cancel"
+        action: "call"
+        target: "revaluation"
+        method: "invalidate_cache"
+
+      - step: "Assert revaluation is cancelled"
+        action: "assert"
+        target: "revaluation"
+        asserts:
+          state:
+            type: "value"
+            expected: "cancel"
+
+      - step: "Assert move_id is cleared after cancel"
+        action: "assert"
+        target: "revaluation"
+        asserts:
+          move_id:
+            type: "value"
+            operator: "is_falsy"
